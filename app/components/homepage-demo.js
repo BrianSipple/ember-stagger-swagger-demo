@@ -11,21 +11,23 @@ export default Component.extend({
 
   staggerDirectionOptions: null,
   staggerListItems: null,
-  currentStaggerDirection: null,
 
+  currentInDirection: null,
+  currentOutDirection: null,
   showItems: false,
+
 
   init () {
     this._super(...arguments);
 
-    this.currentStaggerDirection = this.currentStaggerDirection || 'left';
+    this.currentInDirection = this.currentInDirection || 'left';
   },
 
 
   actions: {
 
     onStaggerDirectionSelected (direction) {
-        set(this, 'currentStaggerDirection', direction);
+        set(this, 'currentInDirection', direction);
     },
 
     onShowItemsToggled (showItems) {

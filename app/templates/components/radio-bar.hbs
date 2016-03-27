@@ -1,0 +1,12 @@
+{{#each options as |option|}}
+
+    {{#radio-button
+      classNames="u-absolute u-transform-center u-fill-width o-grid-cell u-fill-height u-relative"
+      groupValue=groupValue
+      value=direction
+      name=groupName
+    }}
+      {{option}}
+    {{/radio-button}}
+
+{{/each}}

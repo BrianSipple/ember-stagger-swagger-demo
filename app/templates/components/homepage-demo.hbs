@@ -110,7 +110,7 @@
                    u-relative
                    g-bg-red--100"
             tagName="ul"
-            staggerDirection=currentStaggerDirection
+            inDirection=currentInDirection
             showItems=showItems
           }}
 
@@ -132,7 +132,7 @@
 
 
           {{!-- Direction menu TODO: Make THIS a stagger list 😀? --}}
-          <nav class="homepage-demo__swagger-zone-menu
+          <div class="homepage-demo__swagger-zone-menu
                       o-grid-cell
                       u-mt2
                       u-relative">
@@ -152,22 +152,54 @@
                 <li class="o-grid-cell u-fill-height u-relative">
                   {{#radio-button
                     classNames="u-absolute u-transform-center u-fill-width"
-                    groupValue=currentStaggerDirection
+                    groupValue=currentInDirection
                     value=direction
                     name="stagger-direction"
                   }}
                     {{direction}}
                   {{/radio-button}}
-                  {{!-- <label class="o-flex-grid o-flex-grid--fill" for={{direction}} onclick={{action "onStaggerDirectionSelected" }}>
-                    <span class="o-grid-cell">{{direction}}</span>
-                    {{input class="o-grid-cell" id=direction type="radio" name="stagger-direction" value=(mut currentStaggerDirection) onChecked=(action 'onStaggerDirectionSelected' direction)}}
-                  </label> --}}
 
                 </li>
               {{/each}}
 
             </ul>
-          </nav>
+
+            {{radio-bar
+              class="o-flex-grid
+                     o-flex-grid--fit
+                     o-flex-grid--center
+                     o-flex-grid--spaceBetween
+                     u-height-spacing-4
+                     u-pl2
+                     u-pr2
+                     u-mt2
+                     u-relative
+                     g-list-reset
+                     g-bg-yellow--300"
+              groupValue=(mut currentInDirection)
+              groupName="inDirection-toggle"
+              options=staggerDirectionOptions
+              options=staggerDirectionOptions
+            }}
+
+            {{radio-bar
+              class="o-flex-grid
+                     o-flex-grid--fit
+                     o-flex-grid--center
+                     o-flex-grid--spaceBetween
+                     u-height-spacing-4
+                     u-pl2
+                     u-pr2
+                     u-mt2
+                     u-relative
+                     g-list-reset
+                     g-bg-yellow--300"
+              groupValue=(mut currentOutDirection)
+              groupName="outDirection-toggle"
+              options=staggerDirectionOptions
+            }}
+
+          </div>
 
         </div>
 
