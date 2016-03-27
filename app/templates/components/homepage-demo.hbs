@@ -10,15 +10,11 @@
 
     <section class="u-width-90 u-fill-height u-relative u-flow-middle">
 
-      <h2 class="u-align-center g-gray--300 u-align-center">
-        Toggle Stagger Options
-      </h2>
-
       <div class="homepage-demo__swagger-zone
                   o-flex-grid
                   o-flex-grid--auto
                   o-flex-grid--noWrap
-                  u-mt2">
+                  u-mt4">
 
         {{!-- showItemsToggle column --}}
         <div class="homepage-demo__swagger-zone-toggle-menu
@@ -104,18 +100,35 @@
                     o-flex-grid
                     o-flex-grid--full">
 
-          <div class="o-grid-cell
-                      u-mt-auto
-                      u-fill-width
-                      u-overflow-hide
-                      g-bg-red--100">
 
-            {{#stagger-list class="g-list-reset" tagName="ul" staggerDirection="left" showItems=showItems}}
-              {{#each staggerListItems as |item index|}}
-                {{space-craft-card tagName="li" class="g-box-shadow-2 g-nearWhite u-m2" item=item index=index}}
-              {{/each}}
-            {{/stagger-list}}
-          </div>
+          {{#stagger-list
+            class="g-list-reset
+                   o-grid-cell
+                   u-mt-auto
+                   u-fill-width
+                   u-overflow-hide
+                   u-relative
+                   g-bg-red--100"
+            tagName="ul"
+            staggerDirection=currentStaggerDirection
+            showItems=showItems
+          }}
+
+            {{#each staggerListItems as |item index|}}
+              {{space-craft-card
+                tagName="li"
+                class="g-box-shadow-2
+                       g-nearWhite
+                       u-overflow-hide
+                       u-width-80
+                       u-m-auto
+                       u-mt2
+                       u-mb2"
+                item=item index=index
+              }}
+            {{/each}}
+
+          {{/stagger-list}}
 
 
           {{!-- Direction menu TODO: Make THIS a stagger list 😀? --}}
@@ -126,7 +139,8 @@
 
             <ul class="o-flex-grid
                        o-flex-grid--fit
-                       u-fill-width
+                       o-flex-grid--center
+                       o-flex-grid--spaceBetween
                        u-height-spacing-4
                        u-pl2
                        u-pr2
@@ -134,12 +148,20 @@
                        g-bg-yellow--300">
 
               {{#each staggerDirectionOptions as |direction|}}
-                <li class="o-grid-cell">
 
-                  <label class="o-flex-grid o-flex-grid--fill" for={{direction}} onclick={{action "onStaggerDirectionSelected" }}>
+                <li class="o-grid-cell u-fill-height u-relative">
+                  {{#radio-button
+                    classNames="u-absolute u-transform-center u-fill-width"
+                    groupValue=currentStaggerDirection
+                    value=direction
+                    name="stagger-direction"
+                  }}
+                    {{direction}}
+                  {{/radio-button}}
+                  {{!-- <label class="o-flex-grid o-flex-grid--fill" for={{direction}} onclick={{action "onStaggerDirectionSelected" }}>
                     <span class="o-grid-cell">{{direction}}</span>
                     {{input class="o-grid-cell" id=direction type="radio" name="stagger-direction" value=(mut currentStaggerDirection) onChecked=(action 'onStaggerDirectionSelected' direction)}}
-                  </label>
+                  </label> --}}
 
                 </li>
               {{/each}}

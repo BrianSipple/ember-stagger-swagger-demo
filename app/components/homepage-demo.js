@@ -25,7 +25,7 @@ export default Component.extend({
   actions: {
 
     onStaggerDirectionSelected (direction) {
-        this.set('currentStaggerDirection', direction);
+        set(this, 'currentStaggerDirection', direction);
     },
 
     onShowItemsToggled (showItems) {
