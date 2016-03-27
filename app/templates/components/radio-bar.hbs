@@ -1,12 +1,24 @@
-{{#each options as |option|}}
+<div class="o-flex-grid
+     o-flex-grid--fit
+     o-flex-grid--center
+     o-flex-grid--spaceBetween
+     u-relative
+     u-fill-height
+     u-fill-width">
 
-    {{#radio-button
-      classNames="u-absolute u-transform-center u-fill-width o-grid-cell u-fill-height u-relative"
-      groupValue=groupValue
-      value=direction
-      name=groupName
-    }}
-      {{option}}
-    {{/radio-button}}
+  {{#each options as |option|}}
 
-{{/each}}
+    <div class="o-grid-cell u-relative u-fill-height">
+      {{#radio-button
+        classNames="u-absolute u-transform-center u-fill-width o-grid-cell u-relative"
+        groupValue=groupValue
+        value=direction
+        name=groupName
+      }}
+        {{option}}
+      {{/radio-button}}
+    </div>
+
+  {{/each}}
+
+</div>

@@ -10,104 +10,100 @@
 
     <section class="u-width-90 u-fill-height u-relative u-flow-middle">
 
-      <div class="homepage-demo__swagger-zone
+      <div class="homepage-demo__demo-grid-area
                   o-flex-grid
-                  o-flex-grid--auto
-                  o-flex-grid--noWrap
+                  o-flex-grid--full
                   u-mt4">
 
-        {{!-- showItemsToggle column --}}
-        <div class="homepage-demo__swagger-zone-toggle-menu
-                    o-grid-cell
-                    o-flex-grid
-                    o-flex-grid--full
-                    o-flex-grid--center
-                    o-flex-grid--spaceAround
-                    u-width-20
-                    u-fill-height
-                    u-mr2
-                    u-relative">
+        {{!-- showItemsToggle main row --}}
+        <div class="o-grid-cell o-flex-grid u-fill-height">
 
+          {{!-- showItemsToggle column --}}
+          <div class="homepage-demo__swagger-zone-toggle-menu
+                      o-grid-cell
+                      o-grid-cell--grow-none
+                      o-flex-grid
+                      o-flex-grid--full
+                      o-flex-grid--center
+                      o-flex-grid--spaceAround
+                      u-width-20
+                      u-fill-height
+                      u-mr2
+                      u-relative">
 
-          {{!-- show/hide toggle --}}
-          <div class="o-grid-cell">
+            {{!-- show/hide toggle --}}
+            <div class="o-grid-cell">
 
-            <div class="o-flex-grid">
-              {{#radio-button
-                class="o-grid-cell"
-                groupValue=showItems
-                value=true
-                name="showItemsRadio"
-              }}
-                Show (Current Value: {{showItems}})
-                {{!-- <label class="o-grid-cell" for="showItemsRadio">
-                  {{input class="o-grid-cell" id="showItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems onChange=(action 'onShowItemsToggled')}}
+              <div class="o-flex-grid">
+                {{#radio-button
+                  class="o-grid-cell"
+                  groupValue=showItems
+                  value=true
+                  name="showItemsRadio"
+                }}
                   Show (Current Value: {{showItems}})
+                  {{!-- <label class="o-grid-cell" for="showItemsRadio">
+                    {{input class="o-grid-cell" id="showItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems onChange=(action 'onShowItemsToggled')}}
+                    Show (Current Value: {{showItems}})
+                  </label> --}}
+                {{/radio-button}}
+              </div>
+
+              <div class="o-flex-grid">
+                {{#radio-button
+                  class="o-grid-cell"
+                  groupValue=showItems
+                  value=false
+                  name="showItemsRadio"
+                }}
+                {{!-- <label class="o-grid-cell" for="hideItemsRadio">
+                  {{input class="o-grid-cell" id="hideItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems}}
+                  Hide (Current Value: {{showItems}})
                 </label> --}}
-              {{/radio-button}}
+                  Hide (Current Value: {{showItems}})
+                {{/radio-button}}
+              </div>
+
             </div>
 
-            <div class="o-flex-grid">
-              {{#radio-button
-                class="o-grid-cell"
-                groupValue=showItems
-                value=false
-                name="showItemsRadio"
-              }}
-              {{!-- <label class="o-grid-cell" for="hideItemsRadio">
-                {{input class="o-grid-cell" id="hideItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems}}
-                Hide (Current Value: {{showItems}})
-              </label> --}}
-                Hide (Current Value: {{showItems}})
-              {{/radio-button}}
-            </div>
+            {{!-- example in/out keyframes to choose --}}
+            <div class="o-grid-cell">
+              <h4>Custom Keyframes Examples</h4>
 
-          </div>
+              <div class="o-flex-grid">
+                <label class="o-grid-cell" for="keyframes--slide">
+                  {{input class="o-grid-cell" id="keyframes--slide" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
+                  Slide
+                </label>
+              </div>
 
-          {{!-- example in/out keyframes to choose --}}
-          <div class="o-grid-cell">
-            <h4>Custom Keyframes Examples</h4>
+              <div class="o-flex-grid">
+                <label class="o-grid-cell" for="keyframes--slide-and-fade">SlideAndFade</label>
+                {{input class="o-grid-cell" id="keyframes--slide-and-fade" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
+              </div>
 
-            <div class="o-flex-grid">
-              <label class="o-grid-cell" for="keyframes--slide">
-                {{input class="o-grid-cell" id="keyframes--slide" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
-                Slide
-              </label>
-            </div>
+              <div class="o-flex-grid">
+                <label class="o-grid-cell" for="keyframes--fad">Fade</label>
+                {{input class="o-grid-cell" id="keyframes--fad" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
+              </div>
 
-            <div class="o-flex-grid">
-              <label class="o-grid-cell" for="keyframes--slide-and-fade">SlideAndFade</label>
-              {{input class="o-grid-cell" id="keyframes--slide-and-fade" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
-            </div>
+              <div class="o-flex-grid">
+                <label class="o-grid-cell" for="keyframes--scale">Scale</label>
+                {{input class="o-grid-cell" id="keyframes--scale" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
+              </div>
 
-            <div class="o-flex-grid">
-              <label class="o-grid-cell" for="keyframes--fad">Fade</label>
-              {{input class="o-grid-cell" id="keyframes--fad" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
-            </div>
-
-            <div class="o-flex-grid">
-              <label class="o-grid-cell" for="keyframes--scale">Scale</label>
-              {{input class="o-grid-cell" id="keyframes--scale" type="radio" name="keyframesToggleGroup" value=(mut selectedKeyframe)}}
             </div>
 
           </div>
 
-        </div>
-
-        {{!-- Content column --}}
-        <div class="homepage-demo__swagger-zone-list-container
-                    o-grid-cell
-                    o-flex-grid
-                    o-flex-grid--full">
-
-
+          {{!-- Content column --}}
           {{#stagger-list
-            class="g-list-reset
-                   o-grid-cell
-                   u-mt-auto
+            class="o-grid-cell
+                   o-grid-cell--flex-one
                    u-fill-width
                    u-overflow-hide
                    u-relative
+                   g-list-reset
                    g-bg-red--100"
             tagName="ul"
             inDirection=currentInDirection
@@ -131,73 +127,56 @@
           {{/stagger-list}}
 
 
-          {{!-- Direction menu TODO: Make THIS a stagger list 😀? --}}
+        </div>
+
+        <div class="o-grid-cell o-flex-grid">
+
+          {{!-- Direction selection TODO: Make these stagger lists 😀? --}}
           <div class="homepage-demo__swagger-zone-menu
                       o-grid-cell
-                      u-mt2
+                      u-mb2
                       u-relative">
 
-            <ul class="o-flex-grid
-                       o-flex-grid--fit
-                       o-flex-grid--center
+            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt2">
+
+              <div class="o-grid-cell u-relative u-width-20 u-fill-height o-grid-cell--auto">
+                <h4 class="u-absolute u-align-center u-transform-center">In Direction</h4>
+              </div>
+
+
+              {{radio-bar
+                class="o-grid-cell
+                       o-grid-cell--grow-one
                        o-flex-grid--spaceBetween
-                       u-height-spacing-4
+                       u-fill-height
                        u-pl2
                        u-pr2
-                       g-list-reset
-                       g-bg-yellow--300">
+                       g-bg-yellow--300"
+                groupValue=(mut currentInDirection)
+                groupName="inDirection-toggle"
+                options=staggerDirectionOptions
+              }}
+            </div>
 
-              {{#each staggerDirectionOptions as |direction|}}
+            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt2">
 
-                <li class="o-grid-cell u-fill-height u-relative">
-                  {{#radio-button
-                    classNames="u-absolute u-transform-center u-fill-width"
-                    groupValue=currentInDirection
-                    value=direction
-                    name="stagger-direction"
-                  }}
-                    {{direction}}
-                  {{/radio-button}}
+              <div class="o-grid-cell u-relative u-width-20 u-fill-height o-grid-cell--auto">
+                <h4 class="u-absolute u-align-center u-transform-center">Out Direction</h4>
+              </div>
 
-                </li>
-              {{/each}}
-
-            </ul>
-
-            {{radio-bar
-              class="o-flex-grid
-                     o-flex-grid--fit
-                     o-flex-grid--center
-                     o-flex-grid--spaceBetween
-                     u-height-spacing-4
-                     u-pl2
-                     u-pr2
-                     u-mt2
-                     u-relative
-                     g-list-reset
-                     g-bg-yellow--300"
-              groupValue=(mut currentInDirection)
-              groupName="inDirection-toggle"
-              options=staggerDirectionOptions
-              options=staggerDirectionOptions
-            }}
-
-            {{radio-bar
-              class="o-flex-grid
-                     o-flex-grid--fit
-                     o-flex-grid--center
-                     o-flex-grid--spaceBetween
-                     u-height-spacing-4
-                     u-pl2
-                     u-pr2
-                     u-mt2
-                     u-relative
-                     g-list-reset
-                     g-bg-yellow--300"
-              groupValue=(mut currentOutDirection)
-              groupName="outDirection-toggle"
-              options=staggerDirectionOptions
-            }}
+              {{radio-bar
+                class="o-grid-cell
+                       o-grid-cell--grow-one
+                       o-flex-grid--spaceBetween
+                       u-fill-height
+                       u-pl2
+                       u-pr2
+                       g-bg-yellow--300"
+                groupValue=(mut currentOutDirection)
+                groupName="outDirection-toggle"
+                options=staggerDirectionOptions
+              }}
+            </div>
 
           </div>
 

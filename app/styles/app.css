@@ -1,10 +1,10 @@
-.homepage-demo .homepage-demo__swagger-zone {
+.homepage-demo .homepage-demo__demo-grid-area {
   width: 50rem;
   height: 30rem;
 }
 
 .homepage-demo .homepage-demo__swagger-zone-list-container {
-  width: 35rem;
+  /*width: 35rem;*/
 }
 
 .space-craft-card {
