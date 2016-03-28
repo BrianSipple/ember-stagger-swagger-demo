@@ -6,7 +6,7 @@
     </h1>
   </header>
 
-  <main class="u-relative u-fill-width u-fill-height u-mt4">
+  <main class="u-relative u-fill-width u-fill-height u-mt3">
 
     <section class="u-width-90 u-fill-height u-relative u-flow-middle">
 
@@ -96,17 +96,19 @@
 
           </div>
 
-          {{!-- Content column --}}
+          {{!-- Stagger list column --}}
           {{#stagger-list
             class="o-grid-cell
                    o-grid-cell--flex-one
                    u-fill-width
                    u-overflow-hide
+                   u-overflow-scroll-y
                    u-relative
                    g-list-reset
                    g-bg-red--100"
             tagName="ul"
             inDirection=currentInDirection
+            outDirection=currentOutDirection
             showItems=showItems
           }}
 
@@ -132,8 +134,7 @@
         <div class="o-grid-cell o-flex-grid">
 
           {{!-- Direction selection TODO: Make these stagger lists 😀? --}}
-          <div class="homepage-demo__swagger-zone-menu
-                      o-grid-cell
+          <div class="o-grid-cell
                       u-mb2
                       u-relative">
 

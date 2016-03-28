@@ -21,6 +21,7 @@ export default Component.extend({
     this._super(...arguments);
 
     this.currentInDirection = this.currentInDirection || 'left';
+    this.currentOutDirection = this.currentOutDirection || this.currentInDirection;
   },
 
 
