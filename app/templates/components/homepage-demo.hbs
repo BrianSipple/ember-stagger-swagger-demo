@@ -35,35 +35,23 @@
             <div class="o-grid-cell">
 
               <div class="o-flex-grid">
-                {{#radio-button
-                  class="o-grid-cell"
-                  groupValue=showItems
-                  value=true
-                  name="showItemsRadio"
-                }}
-                  Show (Current Value: {{showItems}})
-                  {{!-- <label class="o-grid-cell" for="showItemsRadio">
-                    {{input class="o-grid-cell" id="showItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems onChange=(action 'onShowItemsToggled')}}
-                    Show (Current Value: {{showItems}})
-                  </label> --}}
+                {{#radio-button class="o-grid-cell" groupValue=showItems value=true name="showItemsRadio"}}
+                  Show
                 {{/radio-button}}
               </div>
 
               <div class="o-flex-grid">
-                {{#radio-button
-                  class="o-grid-cell"
-                  groupValue=showItems
-                  value=false
-                  name="showItemsRadio"
-                }}
-                {{!-- <label class="o-grid-cell" for="hideItemsRadio">
-                  {{input class="o-grid-cell" id="hideItemsRadio" type="radio" name="showItemsToggleGroup" value=showItems}}
-                  Hide (Current Value: {{showItems}})
-                </label> --}}
-                  Hide (Current Value: {{showItems}})
+                {{#radio-button class="o-grid-cell" groupValue=showItems value=false name="showItemsRadio"}}
+                  Hide
                 {{/radio-button}}
               </div>
 
+            </div>
+
+            {{!-- Duration slider  --}}
+            <div class="o-grid-cell">
+              <label for="animation-duration-slider">Animation Duration (ms)</label>
+              <input id="animation-duration-slider" type="range" min="200" max="5000" step="100">
             </div>
 
             {{!-- example in/out keyframes to choose --}}
