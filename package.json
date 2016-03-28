@@ -38,6 +38,7 @@
     "ember-radio-button": "1.0.7",
     "ember-resolver": "^2.0.3",
     "ember-stagger-swagger": "*",
+    "emberx-select": "2.1.0",
     "loader.js": "^4.0.0"
   }
 }

@@ -9,11 +9,18 @@ export default Component.extend({
 
   classNames: ['homepage-demo'],
 
-  staggerDirectionOptions: null,
-  staggerListItems: null,
+  staggerDirectionOptions: [],
+  staggerListItems: [],
+  animationDuration: 500,
+  staggerInterval: 32,
+
 
   currentInDirection: null,
   currentOutDirection: null,
+
+
+  customInAnimationName: null,
+  customOutAnimationName: null,
   showItems: false,
 
 
@@ -35,5 +42,5 @@ export default Component.extend({
       set(this, 'showItems', showItems);
     },
 
-  }
+  },
 });
