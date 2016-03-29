@@ -1,10 +1,40 @@
 /*jshint node:true*/
 /* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+'use strict';
+
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+const cssImport = require('postcss-import');
+const cssCustomProperties = require('postcss-custom-properties');
+const cssWring = require('csswring');
+const cssNext = require('postcss-cssnext');
+const cssReporter = require('postcss-reporter');
+const cssNested = require('postcss-nested');
+
+const cssNextOptions = {
+  browsers: ['last 2 version'],
+  sourcemap: true,
+};
+
+const postcssOptions = {
+  plugins: [
+    { module: cssImport },
+    { module: cssCustomProperties },
+    { module: cssNested },
+    { module: cssNext, options: cssNextOptions },
+
+    // minify all the things!
+    { module: cssWring },
+
+    // report all the things!
+    { module: cssReporter },
+  ]
+};
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    postcssOptions
   });
 
   // Use `app.import` to add additional libraries to the generated

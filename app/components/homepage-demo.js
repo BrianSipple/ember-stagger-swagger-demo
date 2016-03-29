@@ -11,6 +11,7 @@ export default Component.extend({
 
   staggerDirectionOptions: [],
   staggerListItems: [],
+  supportedEffects: [],
   animationDuration: 500,
   staggerInterval: 32,
 
@@ -19,8 +20,11 @@ export default Component.extend({
   currentOutDirection: null,
 
 
-  customInAnimationName: null,
-  customOutAnimationName: null,
+  currentSupportedInEffect: null,
+  currentSupportedOutEffect: null,
+  currentCustomInEffect: null,
+  currentCustomOutEffect: null,
+
   showItems: false,
 
 
@@ -29,6 +33,9 @@ export default Component.extend({
 
     this.currentInDirection = this.currentInDirection || 'left';
     this.currentOutDirection = this.currentOutDirection || this.currentInDirection;
+
+    this.currentSupportedInEffect = this.currentSupportedInEffect || this.supportedEffects[0];
+    this.currentSupportedOutEffect = this.currentSupportedOutEffect || this.supportedEffects[0];
   },
 
 
@@ -38,8 +45,10 @@ export default Component.extend({
         set(this, 'currentInDirection', direction);
     },
 
-    onShowItemsToggled (showItems) {
-      set(this, 'showItems', showItems);
+    onShowItemsToggled (ev) {
+      ev.stopPropagation();
+
+      set(this, 'showItems', !this.get('showItems'));
     },
 
   },

@@ -16,7 +16,7 @@
                   u-mt4">
 
         {{!-- showItemsToggle main row --}}
-        <div class="o-grid-cell o-flex-grid u-fill-height">
+        <div class="o-grid-cell o-flex-grid u-fill-height u-mb3">
 
           {{!-- showItemsToggle column --}}
           <div class="homepage-demo__swagger-zone-toggle-menu
@@ -32,71 +32,77 @@
                       u-relative">
 
             {{!-- show/hide toggle --}}
-            <section class="o-grid-cell o-flex-grid">
+            <section class="o-grid-cell o-flex-grid u-height-spacing-4">
 
-              <div class="o-grid-cell">
+              <button class="c-button
+                             c-button--hover-raise
+                             o-grid-cell
+                             o-flex-grid
+                             o-flex-grid--justifyCenter
+                             o-flex-grid--center
+                             g-bg-red--300
+                             g-gray--900
+                             u-fill-height"
+                       onclick={{action 'onShowItemsToggled'}}>
 
-                <div class="c-radio-section o-flex-grid o-flex-grid--justifyCenter">
-                  {{#radio-button class="o-grid-cell" groupValue=showItems value=true name="showItemsRadio"}}
-                    Show
-                  {{/radio-button}}
-                </div>
+                  <span class="o-grid-cell">
+                    {{#if showItems}}
+                      Hide
+                    {{else}}
+                      Show
+                    {{/if}}
+                  </span>
 
-                <div class="c-radio-section o-flex-grid o-flex-grid--justifyCenter">
-                  {{#radio-button class="o-grid-cell" groupValue=showItems value=false name="showItemsRadio"}}
-                    Hide
-                  {{/radio-button}}
-                </div>
+              </button>
 
-              </div>
 
             </section>
-
-            <div class="o-divider-1--horizontal g-bg-gray--500 u-width-40 u-mt2 u-mb2"></div>
 
             {{!-- Timing Sliders --}}
             <section class="o-grid-cell o-flex-grid">
 
-              <div class="c-slider o-grid-cell">
-                <label class="c-slider__label" for="stagger-interval-slider">Stagger Interval (ms)</label>
+              <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
+                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="stagger-interval-slider">Stagger Interval (ms)</label>
                 {{x-slider
-                  class="c-slider__slider"
+                  class="c-slider-widget__slider
+                         o-grid-cell
+                         g-bg-red--100
+                         g-height-spacing-3
+                         u-mt1"
                   id="stagger-interval-slider"
                   min="32"
                   max="4000"
                   step="1"
                   value=(mut staggerInterval)
                 }}
-                <output class="c-slider__output" for="stagger-interval-slider">{{staggerInterval}}</output>
+                <output class="c-slider-widget__output o-grid-cell u-align-center u-mt1" for="stagger-interval-slider">{{staggerInterval}}</output>
               </div>
 
               {{!-- Duration slider  --}}
-              <div class="c-slider o-grid-cell">
-                <label class="c-slider__label" for="animation-duration-slider">Animation Duration (ms)</label>
+              <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
+                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="animation-duration-slider">Animation Duration (ms)</label>
                 {{x-slider
-                  class="c-slider__slider"
+                  class="c-slider-widget__slider o-grid-cell u-mt1"
                   id="animation-duration-slider"
                   min="200"
                   max="6000"
                   step="10"
                   value=(mut animationDuration)
                 }}
-                <output class="c-slider__output" for="animation-duration-slider">{{animationDuration}}</output>
+                <output class="c-slider-widget__output o-grid-cell u-align-center u-mt1" for="animation-duration-slider">{{animationDuration}}</output>
               </div>
 
             </section>
 
-            <div class="o-divider-1--horizontal g-bg-gray--500 u-width-40 u-mt2 u-mb2"></div>
-
             {{!-- Available Keyframes Selection --}}
-            <section class="o-grid-cell o-flex-grid o-flex-grid--full u-mb2">
+            <section class="o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--center u-mb2 u-mt2">
 
-              <h5 class="o-grid-cell">Out-of-the-box Keyframes</h5>
+              <h5 class="o-grid-cell u-align-center g-border-bottom-s1 u-mb2">Out-of-the-box Keyframes</h5>
 
-              <div class="o-grid-cell">
+              <div class="o-grid-cell c-select-widget u-mb2">
 
-                <label for="select-in-animation">In-Animation Name</label>
-                {{#x-select id="select-in-animation" value=currentInAnimationName}}
+                <label class="g-font-smaller u-align-center u-block" for="select-inAnimation"><code class="g-bg-red--100">inEffect</code></label>
+                {{#x-select class="u-block u-m-auto" id="select-inAnimation" value=currentSupportedInEffect}}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -106,10 +112,10 @@
 
               </div>
 
-              <div class="o-grid-cell">
+              <div class="o-grid-cell c-select-widget">
 
-                <label for="select-out-animation">Out-Animation Name</label>
-                {{#x-select id="select-out-animation" value=currentOutAnimationName}}
+                <label class="g-font-smaller u-align-center u-block" for="select-outAnimation"><code class="g-bg-red--100">outEffect</code></label>
+                {{#x-select class="u-block u-m-auto" id="select-outAnimation" value=currentSupportedOutEffect}}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -134,8 +140,8 @@
                    g-bg-red--100"
             inDirection=currentInDirection
             outDirection=currentOutDirection
-            inAnimationName=currentInAnimationName
-            outAnimationName=currentOutAnimationName
+            inEffect=currentSupportedInEffect
+            outEffect=currentSupportedOutEffect
             staggerInterval=staggerInterval
             duration=animationDuration
             showItems=showItems

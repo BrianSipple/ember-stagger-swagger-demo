@@ -15,7 +15,7 @@ const ANIMATION_NAMES = [
   'slideAndFade',
   'slide',
   'fade',
-  //SCALE: 'scale', // TODO: Scale from left, right, up, down, and up
+  'scale',
 ];
 
 export default Route.extend({
