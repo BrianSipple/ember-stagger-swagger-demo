@@ -11,6 +11,10 @@ const cssNext = require('postcss-cssnext');
 const cssReporter = require('postcss-reporter');
 const cssNested = require('postcss-nested');
 
+const Funnel = require('broccoli-funnel');
+
+const MATCH_CSS = new RegExp('.*\\.css$');
+
 const cssNextOptions = {
   browsers: ['last 2 version'],
   sourcemap: true,
@@ -31,10 +35,22 @@ const postcssOptions = {
   ]
 };
 
+// "base" styles within the app/styles directory itself
+const appCSS = new Funnel('app/styles', {
+  srcDir: '/',
+  destDir: '.',
+  include: [MATCH_CSS],
+});
+
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
-    postcssOptions
+
+    postcssOptions,
+
+    trees: {
+      styles: appCSS   // expose this virtual node (aka, virtual directory) to app.css during the build
+    },
+
   });
 
   // Use `app.import` to add additional libraries to the generated

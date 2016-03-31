@@ -1,0 +1,22 @@
+:root {
+
+  /* ------------ RANGE SLIDERS ------------ */
+  --height__slider-thumb: 2rem;
+  --height__slider-track: calc(var(--height__slider-thumb) * 0.25);
+  --width__slider-thumb: calc(var(--height__slider-thumb) * 0.45);
+
+  --background-color__page: hsla(240, 6%, 15%, 1);
+  --background-color__slider-thumb: hsla(0, 0%, 98%, 1);
+  --background-color__slider-track--noFocus: hsla(208, 59%, 42%, 1);
+  --background-color__slider-track--focus: hsla(206, 85%, 63%, 1);
+  --border-color__slider-thumb: 1px solid hsla(0, 0, 0, 0.95);
+  --border-radius__slider-thumb: 0.2em;
+  --border-radius__slider-track: 0.35em;
+  --box-shadow__slider-thumb:
+    0.0625em 0.0625em 0.125em hsla(78, 59%, 93%, 1),
+    0 0 0.0625em hsla(206, 62%, 82%, 1);
+  --box-shadow__slider-track:
+    0.0625em 0.0625em 0.0625em hsla(78, 59%, 93%, 1),
+    0 0 0.0625em hsla(206, 62%, 82%, 1);
+  --border__slider-track: 0.125em solid hsla(240, 0%, 52%, 1);
+}

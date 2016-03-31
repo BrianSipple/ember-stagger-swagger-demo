@@ -1,10 +1,10 @@
-<div class="u-full-stretch u-full-bleed u-relative u-overflow-hide u-overflow-scroll-y">
+<div class="u-full-stretch u-full-bleed u-relative u-overflow-hide u-overflow-scroll-y u-min-width-breakpoint--md">
 
-  <header class="u-relative u-fill-width u-height-20">
-    <h1 class="u-absolute u-transform-center u-fill-width g-gray--300 u-align-center">
+  {{!-- <header class="u-relative u-fill-width u-height-20">
+    <h1 class="u-absolute u-transform-center u-fill-width g-theme-primary--500 u-align-center">
       Ember Stagger Swagger
     </h1>
-  </header>
+  </header> --}}
 
   <main class="u-relative u-fill-width u-fill-height u-mt3">
 
@@ -18,8 +18,8 @@
         {{!-- showItemsToggle main row --}}
         <div class="o-grid-cell o-flex-grid u-fill-height u-mb3">
 
-          {{!-- showItemsToggle column --}}
-          <div class="homepage-demo__swagger-zone-toggle-menu
+          {{!-- item controls column --}}
+          <div class="homepage-demo__item-controls
                       o-grid-cell
                       o-grid-cell--grow-none
                       o-flex-grid
@@ -36,12 +36,11 @@
 
               <button class="c-button
                              c-button--hover-raise
+                             g-bg-theme-primary--500
                              o-grid-cell
                              o-flex-grid
                              o-flex-grid--justifyCenter
                              o-flex-grid--center
-                             g-bg-red--300
-                             g-gray--900
                              u-fill-height"
                        onclick={{action 'onShowItemsToggled'}}>
 
@@ -64,7 +63,7 @@
               <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
                 <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="stagger-interval-slider">Stagger Interval (ms)</label>
                 {{x-slider
-                  class="c-slider-widget__slider
+                  class="c-slider-widget__input
                          o-grid-cell
                          g-bg-red--100
                          g-height-spacing-3
@@ -82,7 +81,7 @@
               <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
                 <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="animation-duration-slider">Animation Duration (ms)</label>
                 {{x-slider
-                  class="c-slider-widget__slider o-grid-cell u-mt1"
+                  class="c-slider-widget__input o-grid-cell u-mt1"
                   id="animation-duration-slider"
                   min="200"
                   max="6000"
@@ -101,7 +100,7 @@
 
               <div class="o-grid-cell c-select-widget u-mb2">
 
-                <label class="g-font-smaller u-align-center u-block" for="select-inAnimation"><code class="g-bg-red--100">inEffect</code></label>
+                <label class="g-font-smaller u-align-center u-block" for="select-inAnimation"><code class="g-bg-theme-primary--500">inEffect</code></label>
                 {{#x-select class="u-block u-m-auto" id="select-inAnimation" value=currentSupportedInEffect}}
 
                   {{#each supportedEffects as |animationName|}}
@@ -114,7 +113,7 @@
 
               <div class="o-grid-cell c-select-widget">
 
-                <label class="g-font-smaller u-align-center u-block" for="select-outAnimation"><code class="g-bg-red--100">outEffect</code></label>
+                <label class="g-font-smaller u-align-center u-block" for="select-outAnimation"><code class="g-bg-theme-primary--500">outEffect</code></label>
                 {{#x-select class="u-block u-m-auto" id="select-outAnimation" value=currentSupportedOutEffect}}
 
                   {{#each supportedEffects as |animationName|}}
@@ -130,14 +129,13 @@
 
           {{!-- Stagger list column --}}
           {{#stagger-list
-            class="o-grid-cell
+            class="homepage-demo__stagger-list-container
+                   o-grid-cell
                    o-grid-cell--flex-one
                    u-fill-width
                    u-overflow-hide
                    u-overflow-scroll-y
-                   u-relative
-                   g-list-reset
-                   g-bg-red--100"
+                   u-relative"
             inDirection=currentInDirection
             outDirection=currentOutDirection
             inEffect=currentSupportedInEffect

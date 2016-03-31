@@ -1,11 +1,42 @@
-.homepage-demo .homepage-demo__demo-grid-area {
-  width: 50rem;
-  height: 30rem;
+@import './variables/variables.css';
+@import './components/components.css';
+
+
+
+.g-theme-primary--500 {
+  color: var(--theme-color__primary-1--500);
+}
+.g-theme-offWhite {
+  color: var(--theme-color__offWhite);
+}
+.g-theme-nearBlack {
+  color: var(--theme-color__nearBlack);
 }
 
-.homepage-demo .homepage-demo__swagger-zone-list-container {
-  /*width: 35rem;*/
+.g-bg-theme-primary--500 {
+  background-color: var(--theme-color__primary-1--500);
 }
+.g-bg-theme-offWhite {
+  background-color: var(--theme-color__offWhite);
+}
+.g-bg-theme-nearBlack {
+  background-color: var(--theme-color__nearBlack);
+}
+
+.homepage-demo {
+  .homepage-demo__demo-grid-area {
+    width: 50rem;
+    height: 30rem;
+  }
+  .homepage-demo__stagger-list-container {
+    background-color: var(--theme-color__offWhite);
+  }
+
+  .homepage-demo__item-controls {
+
+  }
+}
+
 
 .space-craft-card {
   height: 5rem;
@@ -14,35 +45,26 @@
 .space-craft-card {
   &:nth-child(4n+1) {
     .space-craft-card__img {
-      background-color: blue;
+      background-color: var(--theme-color__secondary-1--500);
     }
   }
   &:nth-child(4n+2) {
     .space-craft-card__img {
-      background-color: yellow;
+      background-color: var(--theme-color__secondary-2--500);
     }
   }
   &:nth-child(4n+3) {
     .space-craft-card__img {
-      background-color: hotpink;
+      background-color: var(--theme-color__secondary-1--500);
     }
   }
   &:nth-child(4n+4) {
     .space-craft-card__img {
-      background-color: rebeccapurple;
+      background-color: var(--theme-color__secondary-2--500);
     }
   }
 }
 
-/*.space-craft-card:nth-child(4n+2) .space-craft-card__img {
-background-color: yellow;
-}
-.space-craft-card:nth-child(4n+3) .space-craft-card__img {
-background-color: hotpink;
-}
-.space-craft-card:nth-child(4n+4) .space-craft-card__img {
-background-color: rebeccapurple;
-}*/
 
 .c-radio-widget  {
 
@@ -70,6 +92,7 @@ background-color: rebeccapurple;
   border-radius: 0.125em;
   transition: transform 0.4s ease-in-out;
   box-shadow: 0 0.065em 0.125em hsla(0, 0, 0, 0.14);
+
 
   &.c-button--hover-raise {
 
