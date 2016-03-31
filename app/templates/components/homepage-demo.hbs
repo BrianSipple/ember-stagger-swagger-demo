@@ -44,6 +44,7 @@
                              o-flex-grid--justifyCenter
                              o-flex-grid--center
                              u-fill-height"
+                       disabled={{isAnimating}}
                        onclick={{action 'onShowItemsToggled'}}>
 
                   <span class="o-grid-cell">
@@ -155,6 +156,8 @@
             staggerInterval=staggerInterval
             duration=animationDuration
             showItems=showItems
+            onAnimationStart=(action 'onStaggerListAnimationStart')
+            onAnimationComplete=(action 'onStaggerListAnimationComplete')
           }}
 
             {{#each staggerListItems as |item index|}}

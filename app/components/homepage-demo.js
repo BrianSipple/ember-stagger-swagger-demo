@@ -26,6 +26,7 @@ export default Component.extend({
   currentCustomOutEffect: null,
 
   showItems: false,
+  isAnimating: false,
 
 
   init () {
@@ -50,6 +51,14 @@ export default Component.extend({
 
       set(this, 'showItems', !this.get('showItems'));
     },
+
+    onStaggerListAnimationStart (ev) {
+      set(this, 'isAnimating', true);
+    },
+
+    onStaggerListAnimationComplete () {
+      set(this, 'isAnimating', false);
+    }
 
   },
 });
