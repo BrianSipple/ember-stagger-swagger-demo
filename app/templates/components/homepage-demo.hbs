@@ -1,22 +1,24 @@
-<div class="u-full-stretch u-full-bleed u-relative u-overflow-hide u-overflow-scroll-y u-min-width-breakpoint--md">
+<div class="homepage-demo__main-container u-relative u-overflow-hide u-overflow-scroll-y u-min-width-breakpoint--md u-fill-height u-m-auto">
 
-  {{!-- <header class="u-relative u-fill-width u-height-20">
-    <h1 class="u-absolute u-transform-center u-fill-width g-theme-primary--500 u-align-center">
+  <header class="u-relative u-fill-width u-height-20">
+    <h1 class="u-fill-width g-theme-primary--500 u-align-center u-mt3">
       Ember Stagger Swagger
     </h1>
-  </header> --}}
+  </header>
 
   <main class="u-relative u-fill-width u-fill-height u-mt3">
 
     <section class="u-width-90 u-fill-height u-relative u-flow-middle">
 
       <div class="homepage-demo__demo-grid-area
+                  u-fill-width
+                  u-fill-height
                   o-flex-grid
                   o-flex-grid--full
                   u-mt4">
 
         {{!-- showItemsToggle main row --}}
-        <div class="o-grid-cell o-flex-grid u-fill-height u-mb3">
+        <div class="homepage-demo__demo-grid-row o-grid-cell o-flex-grid u-fill-height u-mb3">
 
           {{!-- item controls column --}}
           <div class="homepage-demo__item-controls
@@ -61,7 +63,7 @@
             <section class="o-grid-cell o-flex-grid">
 
               <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
-                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="stagger-interval-slider">Stagger Interval (ms)</label>
+                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell u-mb2 u-align-center" for="stagger-interval-slider">Stagger Interval (ms)</label>
                 {{x-slider
                   class="c-slider-widget__input
                          o-grid-cell
@@ -79,7 +81,7 @@
 
               {{!-- Duration slider  --}}
               <div class="c-slider-widget o-grid-cell o-flex-grid o-flex-grid--full o-flex-grid--justifyCenter u-mt2">
-                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell" for="animation-duration-slider">Animation Duration (ms)</label>
+                <label class="c-slider-widget__label g-clip g-font-smaller o-grid-cell u-mb2 u-align-center" for="animation-duration-slider">Animation Duration (ms)</label>
                 {{x-slider
                   class="c-slider-widget__input o-grid-cell u-mt1"
                   id="animation-duration-slider"
@@ -98,10 +100,15 @@
 
               <h5 class="o-grid-cell u-align-center g-border-bottom-s1 u-mb2">Out-of-the-box Keyframes</h5>
 
-              <div class="o-grid-cell c-select-widget u-mb2">
+              <div class="o-grid-cell
+                          o-flex-grid
+                          o-flex-grid--noWrap
+                          o-flex-grid--justifyCenter
+                          o-flex-grid--center
+                          c-select-widget u-mb2">
 
-                <label class="g-font-smaller u-align-center u-block" for="select-inAnimation"><code class="g-bg-theme-primary--500">inEffect</code></label>
-                {{#x-select class="u-block u-m-auto" id="select-inAnimation" value=currentSupportedInEffect}}
+                <label class="o-grid-cell u-mr2 g-font-smaller" for="select-inAnimation"><code>inEffect: </code></label>
+                {{#x-select class="o-grid-cell" id="select-inAnimation" value=currentSupportedInEffect}}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -111,10 +118,15 @@
 
               </div>
 
-              <div class="o-grid-cell c-select-widget">
+              <div class="o-grid-cell
+                          o-flex-grid
+                          o-flex-grid--noWrap
+                          o-flex-grid--justifyCenter
+                          o-flex-grid--center
+                          c-select-widget">
 
-                <label class="g-font-smaller u-align-center u-block" for="select-outAnimation"><code class="g-bg-theme-primary--500">outEffect</code></label>
-                {{#x-select class="u-block u-m-auto" id="select-outAnimation" value=currentSupportedOutEffect}}
+                <label class="o-grid-cell u-mr2 g-font-smaller" for="select-outAnimation"><code>outEffect: </code></label>
+                {{#x-select class="o-grid-cell" id="select-outAnimation" value=currentSupportedOutEffect}}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -170,7 +182,7 @@
                       u-mb2
                       u-relative">
 
-            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt2">
+            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt2 u-mb3">
 
               <div class="o-grid-cell u-relative u-width-20 u-fill-height o-grid-cell--auto">
                 <h4 class="u-absolute u-align-center u-transform-center">In Direction</h4>
@@ -178,33 +190,35 @@
 
 
               {{radio-bar
-                class="o-grid-cell
+                class="homepage-demo__direction-radio-bar
+                       o-grid-cell
                        o-grid-cell--grow-one
                        o-flex-grid--spaceBetween
                        u-fill-height
                        u-pl2
                        u-pr2
-                       g-bg-yellow--300"
+                       g-border-bottom-s1"
                 groupValue=(mut currentInDirection)
                 groupName="inDirection-toggle"
                 options=staggerDirectionOptions
               }}
             </div>
 
-            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt2">
+            <div class="o-flex-grid u-fill-width u-height-spacing-4 u-mt3">
 
               <div class="o-grid-cell u-relative u-width-20 u-fill-height o-grid-cell--auto">
                 <h4 class="u-absolute u-align-center u-transform-center">Out Direction</h4>
               </div>
 
               {{radio-bar
-                class="o-grid-cell
+                class="homepage-demo__direction-radio-bar
+                       o-grid-cell
                        o-grid-cell--grow-one
                        o-flex-grid--spaceBetween
                        u-fill-height
                        u-pl2
                        u-pr2
-                       g-bg-yellow--300"
+                       g-border-bottom-s1"
                 groupValue=(mut currentOutDirection)
                 groupName="outDirection-toggle"
                 options=staggerDirectionOptions

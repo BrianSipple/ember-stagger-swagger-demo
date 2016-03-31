@@ -5,18 +5,41 @@
   --height__slider-track: calc(var(--height__slider-thumb) * 0.25);
   --width__slider-thumb: calc(var(--height__slider-thumb) * 0.45);
 
+  --thumb-shadow-color--100: hsla(37, 100%, 94%, 1);
+  --thumb-shadow-color--300: hsla(193, 100%, 79%, 1);
+  --thumb-shadow-color--500: hsla(225, 100%, 82%, 1);
+
+  --border-color__slider: hsla(224, 9%, 61%, 1);
+
   --background-color__page: hsla(240, 6%, 15%, 1);
-  --background-color__slider-thumb: hsla(0, 0%, 98%, 1);
-  --background-color__slider-track--noFocus: hsla(208, 59%, 42%, 1);
-  --background-color__slider-track--focus: hsla(206, 85%, 63%, 1);
-  --border-color__slider-thumb: 1px solid hsla(0, 0, 0, 0.95);
-  --border-radius__slider-thumb: 0.2em;
-  --border-radius__slider-track: 0.35em;
-  --box-shadow__slider-thumb:
-    0.0625em 0.0625em 0.125em hsla(78, 59%, 93%, 1),
-    0 0 0.0625em hsla(206, 62%, 82%, 1);
-  --box-shadow__slider-track:
-    0.0625em 0.0625em 0.0625em hsla(78, 59%, 93%, 1),
-    0 0 0.0625em hsla(206, 62%, 82%, 1);
+  --background-color__slider-thumb--noFocus: var(--color__grayscale--disabled);
+  --background-color__slider-thumb--focus: var(--color__grayscale--active);
+  --background-color__slider-track--noFocus: var(--theme-color__primary-1--100);
+  --background-color__slider-track--focus: var(--theme-color__primary-1--500);
+  /*--border__slider-thumb: 1px solid var(--border-color__slider);
+  --border__slider-track: 1px solid var(--border-color__slider);*/
+  --border__slider-thumb: none;
+  --border__slider-track: none;
+  --border-radius__slider-thumb: 0em;
+  --border-radius__slider-track: 0em;
+
+  --box-shadow__slider-thumb--noFocus:
+    0 0 0.100em var(--thumb-shadow-color--500),
+    0 0 0.150em var(--thumb-shadow-color--300),
+    0 0 0.200em var(--thumb-shadow-color--100);
+
+  --box-shadow__slider-thumb--focus:
+    0 0 0.200em var(--thumb-shadow-color--500),
+    0 0 0.300em var(--thumb-shadow-color--300),
+    0 0 0.300em var(--thumb-shadow-color--100);
+
+  --box-shadow__slider-track--noFocus:
+    0 0 0.325em hsla(0, 100%, 100%, 0.6),
+    0 0 0.655em hsla(0, 100%, 100%, 0.4);
+
+  --box-shadow__slider-track--focus:
+    0 0 0.125em var(--theme-color__primary-1--500),
+    0 0 0.0625em var(--theme-color__primary-1--100);
+
   --border__slider-track: 0.125em solid hsla(240, 0%, 52%, 1);
 }

@@ -24,16 +24,25 @@
 }
 
 .homepage-demo {
-  .homepage-demo__demo-grid-area {
-    width: 50rem;
+
+  &__main-container {
+    width: 60rem;
+  }
+
+  &__demo-grid-row {
     height: 30rem;
   }
-  .homepage-demo__stagger-list-container {
+
+  &__stagger-list-container {
     background-color: var(--theme-color__offWhite);
   }
 
-  .homepage-demo__item-controls {
+  &__item-controls {
 
+  }
+
+  &__direction-radio-bar {
+    border-bottom-color: var(--theme-color__secondary-2--300);
   }
 }
 
@@ -43,26 +52,26 @@
 }
 
 .space-craft-card {
-  &:nth-child(4n+1) {
+  &:nth-child(3n+1) {
+    .space-craft-card__img {
+      background-color: var(--theme-color__accent-1--500);
+    }
+  }
+  &:nth-child(3n+2) {
+    .space-craft-card__img {
+      background-color: var(--theme-color__secondary-2--300);
+    }
+  }
+  &:nth-child(3n+3) {
     .space-craft-card__img {
       background-color: var(--theme-color__secondary-1--500);
     }
   }
-  &:nth-child(4n+2) {
+  /*&:nth-child(4n+4) {
     .space-craft-card__img {
-      background-color: var(--theme-color__secondary-2--500);
+      background-color: var(--theme-color__accent-2--300);
     }
-  }
-  &:nth-child(4n+3) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__secondary-1--500);
-    }
-  }
-  &:nth-child(4n+4) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__secondary-2--500);
-    }
-  }
+  }*/
 }
 
 
@@ -70,20 +79,6 @@
 
 }
 
-.c-slider-widget {
-  .c-slider-widget__slider {
-    -webkit-appearance: none;
-
-    ::-webkit-slider-thumb,
-    ::-moz-range-thumb,
-    ::-ms-thumb {
-      background-color: yellow;
-      height: 10%;
-      width: 10%;
-    }
-
-  }
-}
 
 .c-button {
   position: relative;

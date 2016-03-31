@@ -1,0 +1,25 @@
+:root {
+  --theme-color__primary-1--100: hsla(9, 100%, 82%, 1);
+  --theme-color__primary-1--500: hsla(9, 100%, 66%, 1);
+
+  --theme-color__accent-1--500: hsla(27, 20%, 26%, 1);
+
+
+  --theme-color__accent-2--300: hsla(225, 100%, 82%, 1);
+  --theme-color__accent-2--500: hsla(225, 100%, 66%, 1);
+  --theme-color__accent-2--700: hsla(226, 59%, 54%, 1);
+
+
+
+  --theme-color__secondary-1--500: hsla(55, 100%, 71%, 1);
+
+
+  --theme-color__secondary-2--300: hsla(179, 96%, 59%, 1.0);
+
+
+  --theme-color__nearBlack: hsla(0, 0%, 21%, 1);
+  --theme-color__offWhite: hsla(48, 28%, 82%, 1);
+
+  --color__grayscale--disabled: hsla(0, 0%, 79%, 1);
+  --color__grayscale--active: hsla(0, 0%, 93%, 1);
+}

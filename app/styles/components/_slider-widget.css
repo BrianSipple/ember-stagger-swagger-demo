@@ -2,7 +2,7 @@
 
   width: 20rem;
 
-  .c-slider-widget__input {
+  &__input {
     /* Hides the slider so that custom slider can be made */
     -webkit-appearance: none;
 
@@ -10,7 +10,7 @@
     width: 100%;
 
     /* Only remove because we're creating our own effect */
-    &:focus {      
+    &:focus {
       outline: none;
     }
 
@@ -28,30 +28,46 @@
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       cursor: pointer;
-      border: var(--border-color__slider-thumb);
+      border: var(--border__slider-thumb);
       height: var(--height__slider-thumb);
       width: var(--width__slider-thumb);
       border-radius: var(--border-radius__slider-thumb);
-      background-color: var(--background-color__slider-thumb);
-      box-shadow: var(--box-shadow__slider-thumb);
+      box-shadow: var(--box-shadow__slider-thumb--noFocus);
+      background-color: var(--background-color__slider-thumb--noFocus);
 
       /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
       margin-top: calc(-1 * ( var(--height__slider-thumb) * 0.48 ));
     }
+
+    &:hover::-webkit-slider-thumb {
+      box-shadow: var(--box-shadow__slider-thumb--focus);
+      background-color: var(--background-color__slider-thumb--focus);
+    }
+    &:focus::-webkit-slider-thumb {
+      box-shadow: var(--box-shadow__slider-thumb--focus);
+      background-color: var(--background-color__slider-thumb--focus);
+    }
+
 
     /* Styling for WebKit/Blink track */
     &::-webkit-slider-runnable-track {
       cursor: pointer;
       width: 100%;
       height: var(--height__slider-track);
-      box-shadhow: var(--box-shadow__slider-track);
+      box-shadow: var(--box-shadow__slider-track--noFocus);
       background-color: var(--background-color__slider-track--noFocus);
       border-radius: var(--border-radius__slider-track);
-      border: var(--border__slider-track);
+      /*border: var(--border__slider-track);*/
     }
 
     &:focus::-webkit-slider-runnable-track {
       background-color: var(--background-color__slider-track--focus);
+      box-shadow: var(--box-shadow__slider-track--focus);
+
+    }
+    &:hover::-webkit-slider-runnable-track {
+      background-color: var(--background-color__slider-track--focus);
+      box-shadow: var(--box-shadow__slider-track--focus);
     }
 
 
@@ -62,8 +78,8 @@
       height: var(--height__slider-thumb);
       width: var(--width__slider-thumb);
       border-radius: var(--border-radius__slider-thumb);
-      background-color: var(--background-color__slider-thumb);
-      box-shadow: var(--box-shadow__slider-thumb);
+      background-color: var(--background-color__slider-thumb--noFocus);
+      box-shadow: var(--box-shadow__slider-thumb--focus);
     }
 
 
@@ -86,8 +102,8 @@
       height: var(--height__slider-thumb);
       width: var(--width__slider-thumb);
       border-radius: var(--border-radius__slider-thumb);
-      background-color: var(--background-color__slider-thumb);
-      box-shadow: var(--box-shadow__slider-thumb);
+      background-color: var(--background-color__slider-thumb--noFocus);
+      box-shadow: var(--box-shadow__slider-thumb--focus);
     }
 
     /* Styling for IE/Edge Thumb */
@@ -117,7 +133,13 @@
     &:focus::ms-fill-lower {
       background-color: var(--background-color__slider-track--focus);
     }
+    &:hover::ms-fill-lower {
+      background-color: var(--background-color__slider-track--focus);
+    }
     &:focus::ms-fill-upper {
+      background-color: var(--background-color__slider-track--focus);
+    }
+    &:hover::ms-fill-upper {
       background-color: var(--background-color__slider-track--focus);
     }
   }
