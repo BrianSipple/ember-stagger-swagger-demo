@@ -1,0 +1,11 @@
+.c-select-widget {
+
+  &__label {
+    font-size: 0.8em;
+  }
+
+  &__select-box {
+    width: 3rem;
+    height: 3rem;
+  }
+}

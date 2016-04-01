@@ -1,6 +1,10 @@
 @import './variables/variables.css';
 @import './components/components.css';
 
+:root {
+  --width__main-content-container: 60rem;
+  --width__item-controls: calc(var(--width__main-content-container) * 0.22);
+}
 
 
 .g-theme-primary--500 {
@@ -26,7 +30,7 @@
 .homepage-demo {
 
   &__main-container {
-    width: 60rem;
+    width: var(--width__main-content-container);
   }
 
   &__demo-grid-row {
@@ -34,11 +38,12 @@
   }
 
   &__stagger-list-container {
+    width: calc(100% - var(--width__item-controls));
     background-color: var(--theme-color__offWhite);
   }
 
   &__item-controls {
-
+    width: var(--width__item-controls);
   }
 
   &__direction-radio-bar {

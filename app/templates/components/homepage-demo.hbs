@@ -18,19 +18,24 @@
                   u-mt4">
 
         {{!-- showItemsToggle main row --}}
-        <div class="homepage-demo__demo-grid-row o-grid-cell o-flex-grid u-fill-height u-mb3">
+        <div class="homepage-demo__demo-grid-row
+                    o-grid-cell
+                    o-flex-grid
+                    o-flex-grid--auto
+                    o-flex-grid--noWrap
+                    u-fill-height
+                    u-mb3">
 
           {{!-- item controls column --}}
           <div class="homepage-demo__item-controls
                       o-grid-cell
-                      o-grid-cell--grow-none
                       o-flex-grid
                       o-flex-grid--full
                       o-flex-grid--center
-                      o-flex-grid--spaceAround
-                      u-width-20
+                      o-flex-grid--justifyCenter
+                      u-overflow-hide
                       u-fill-height
-                      u-mr2
+                      u-mr3
                       u-relative">
 
             {{!-- show/hide toggle --}}
@@ -86,9 +91,9 @@
                 {{x-slider
                   class="c-slider-widget__input o-grid-cell u-mt1"
                   id="animation-duration-slider"
-                  min="200"
-                  max="6000"
-                  step="10"
+                  min="100"
+                  max="4000"
+                  step="50"
                   value=(mut animationDuration)
                 }}
                 <output class="c-slider-widget__output o-grid-cell u-align-center u-mt1" for="animation-duration-slider">{{animationDuration}}</output>
@@ -101,15 +106,27 @@
 
               <h5 class="o-grid-cell u-align-center g-border-bottom-s1 u-mb2">Out-of-the-box Keyframes</h5>
 
-              <div class="o-grid-cell
+              <div class="c-select-widget
+                          o-grid-cell
                           o-flex-grid
                           o-flex-grid--noWrap
                           o-flex-grid--justifyCenter
                           o-flex-grid--center
-                          c-select-widget u-mb2">
+                          u-mb2">
 
-                <label class="o-grid-cell u-mr2 g-font-smaller" for="select-inAnimation"><code>inEffect: </code></label>
-                {{#x-select class="o-grid-cell" id="select-inAnimation" value=currentSupportedInEffect}}
+                <label class="c-select-widget__label
+                              o-grid-cell
+                              o-grid-cell--grow-none
+                              u-mr2
+                              g-font-smaller"
+                       for="select-inAnimation">
+                   <code>inEffect: </code>
+                 </label>
+                {{#x-select
+                  class="c-select-widget__select-box o-grid-cell"
+                  id="select-inAnimation"
+                  value=currentSupportedInEffect
+                 }}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -119,15 +136,26 @@
 
               </div>
 
-              <div class="o-grid-cell
+              <div class="c-select-widget
+                          o-grid-cell
                           o-flex-grid
                           o-flex-grid--noWrap
                           o-flex-grid--justifyCenter
-                          o-flex-grid--center
-                          c-select-widget">
+                          o-flex-grid--center">
 
-                <label class="o-grid-cell u-mr2 g-font-smaller" for="select-outAnimation"><code>outEffect: </code></label>
-                {{#x-select class="o-grid-cell" id="select-outAnimation" value=currentSupportedOutEffect}}
+                <label class="c-select-widget__label
+                              o-grid-cell
+                              o-grid-cell--grow-none
+                              u-mr2
+                              g-font-smaller"
+                        for="select-outAnimation">
+                  <code>outEffect: </code>
+                </label>
+                {{#x-select
+                  class="c-select-widget__select-box o-grid-cell"
+                  id="select-outAnimation"
+                  value=currentSupportedOutEffect
+                }}
 
                   {{#each supportedEffects as |animationName|}}
                     {{#x-option value=animationName}}{{animationName}}{{/x-option}}
@@ -143,6 +171,7 @@
           {{!-- Stagger list column --}}
           {{#stagger-list
             class="homepage-demo__stagger-list-container
+                   u-ml3
                    o-grid-cell
                    o-grid-cell--flex-one
                    u-fill-width
