@@ -47,37 +47,11 @@
   }
 
   &__direction-radio-bar {
-    border-bottom-color: var(--theme-color__secondary-2--300);
+    border-bottom-color: var(--theme-color__accent-4--100);
   }
 }
 
 
-.space-craft-card {
-  height: 5rem;
-}
-
-.space-craft-card {
-  &:nth-child(3n+1) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__accent-1--500);
-    }
-  }
-  &:nth-child(3n+2) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__secondary-2--300);
-    }
-  }
-  &:nth-child(3n+3) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__secondary-1--500);
-    }
-  }
-  /*&:nth-child(4n+4) {
-    .space-craft-card__img {
-      background-color: var(--theme-color__accent-2--300);
-    }
-  }*/
-}
 
 
 .c-radio-widget  {
@@ -109,14 +83,19 @@
       opacity: 0;
     }
     &:hover {
-      &::after {
-        opacity: 1;
-      }
       transform: scale(1.05);
+    }
+    &:hover::after {
+      opacity: 1;
     }
   }
   &:focus,
   &:active {
     outline: aqua;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color__grayscale--disabled);
   }
 }

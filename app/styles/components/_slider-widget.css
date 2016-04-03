@@ -74,7 +74,7 @@
     /* Styling for Firefox thumb */
     &::-moz-range-thumb {
       cursor: pointer;
-      border: var(--border-color__slider-thumb);
+      border: var(--border__slider-thumb);
       height: var(--height__slider-thumb);
       width: var(--width__slider-thumb);
       border-radius: var(--border-radius__slider-thumb);
@@ -88,7 +88,7 @@
       cursor: pointer;
       width: 100%;
       height: var(--height__slider-track);
-      box-shadhow: var(--box-shadow__slider-track);
+      box-shadhow: var(--box-shadow__slider-track--noFocus);
       background-color: var(--background-color__slider-track--noFocus);
       border-radius: var(--border-radius__slider-track);
       border: var(--border__slider-track);
@@ -98,7 +98,7 @@
     /* Styling for IE/Edge Thumb */
     &::-ms-thumb {
       cursor: pointer;
-      border: var(--border-color__slider-thumb);
+      border: var(--border__slider-thumb);
       height: var(--height__slider-thumb);
       width: var(--width__slider-thumb);
       border-radius: var(--border-radius__slider-thumb);
@@ -121,13 +121,13 @@
       background-color: var(--background-color__slider-track--noFocus);
       border: var(--border__slider-track);
       border-radius: var(--border-radius__slider-track);
-      box-shadow: var(--box-shadow__slider-track);
+      box-shadow: var(--box-shadow__slider-track--noFocus);
     }
     &::-ms-fill-upper {
       background-color: var(--background-color__slider-track--noFocus);
       border: var(--border__slider-track);
       border-radius: var(--border-radius__slider-track);
-      box-shadow: var(--box-shadow__slider-track);
+      box-shadow: var(--box-shadow__slider-track--noFocus);
     }
 
     &:focus::ms-fill-lower {

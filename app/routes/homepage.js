@@ -3,12 +3,14 @@ import Ember from 'ember';
 const { Route } = Ember;
 
 const spaceCrafts = [
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
-  { name: 'Falcon Heavy', weight: 33, size: 99, imgURL: '' },
+  { name: 'Roadster', year: 2008, imgURL: '' },
+  { name: 'Model S', year: 2012, imgURL: '' },
+  { name: 'Model X', year: 2012, imgURL: '' },
+  { name: 'Model 3', year: 2016, imgURL: '' },
+  { name: 'Roadster', year: 2008, imgURL: '' },
+  { name: 'Model S', year: 2012, imgURL: '' },
+  { name: 'Model X', year : 2012, imgURL: '' },
+  { name: 'Model 3', year: 2016, imgURL: '' },
 ];
 
 const ANIMATION_NAMES = [

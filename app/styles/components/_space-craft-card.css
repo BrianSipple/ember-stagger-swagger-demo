@@ -1,0 +1,31 @@
+
+.space-craft-card {
+  height: 5rem;
+
+
+  &:nth-child(4n+1) {
+    color: var(--theme-color__primary-2--700);
+    .space-craft-card__img {
+      background-color: var(--theme-color__accent-2--100);
+    }
+  }
+  &:nth-child(4n+2) {
+    color: var(--theme-color__primary-3--700);
+    .space-craft-card__img {
+      background-color: var(--theme-color__accent-3--100);
+    }
+  }
+  &:nth-child(4n+3) {
+    color: var(--theme-color__primary-1--700);
+    .space-craft-card__img {
+      background-color: var(--theme-color__accent-1--100);
+    }
+  }
+  &:nth-child(4n+4) {
+    color: var(--theme-color__primary-4--700);
+    .space-craft-card__img {
+      background-color: var(--theme-color__accent-4--100);
+    }
+  }
+
+}
