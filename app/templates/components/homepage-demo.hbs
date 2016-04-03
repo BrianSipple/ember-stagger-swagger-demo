@@ -169,15 +169,15 @@
           </div>
 
           {{!-- Stagger list column --}}
-          {{#stagger-list
-            class="homepage-demo__stagger-list-container
+          {{#stagger-set
+            class="homepage-demo__stagger-set-container
                    u-ml3
                    o-grid-cell
                    o-grid-cell--flex-one
                    u-fill-width
                    u-overflow-hide
                    u-overflow-scroll-y
-                   u-relative"
+                   "
             inDirection=currentInDirection
             outDirection=currentOutDirection
             inEffect=currentSupportedInEffect
@@ -203,7 +203,7 @@
               }}
             {{/each}}
 
-          {{/stagger-list}}
+          {{/stagger-set}}
 
 
         </div>

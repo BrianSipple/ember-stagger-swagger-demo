@@ -25,7 +25,7 @@ export default Component.extend({
   currentCustomInEffect: null,
   currentCustomOutEffect: null,
 
-  showItems: false,
+  showItems: true,
   isAnimating: false,
 
 

@@ -37,7 +37,7 @@
     height: 30rem;
   }
 
-  &__stagger-list-container {
+  &__stagger-set-container {
     width: calc(100% - var(--width__item-controls));
     background-color: var(--theme-color__offWhite);
   }
