@@ -6,7 +6,6 @@
   --width__item-controls: calc(var(--width__main-content-container) * 0.22);
 }
 
-
 .g-theme-primary--500 {
   color: var(--theme-color__primary-1--500);
 }
